@@ -144,7 +144,6 @@ h1 {
 
 h2 {
     font-size: 1.375em;
-    text-transform: uppercase;
     letter-spacing: 0;
 }
 
@@ -211,11 +210,6 @@ li {
     list-style: none
 }
 
-.visible {
-    display: block;
-    opacity: 1;
-}
-
 .hidden {
     display: none !important;
     opacity: 0;
@@ -225,6 +219,8 @@ li {
     transform: rotate(90deg);
 }
 
-.up {
-    transform: rotate(-90deg);
+.width-controlled {
+    width: min(100%,1240px);
+    margin: 0 auto;
+    padding: 3rem 20px;
 }
