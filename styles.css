@@ -394,7 +394,7 @@
     }
 }
 
-/* Accordion article - Extra large screens & TVs */
+/* Accordion article - large screens */
 @media only screen and (min-width: 1000px) {
     #accordion-article__container {
         grid-template-columns: 1fr 1fr;
@@ -443,9 +443,83 @@
     transition: max-height 0.4s ease-out;
 }
 
-.accordion__item-container >p {
+.accordion__item-container > p {
     padding: 18px 0;
 }
+
+/* CTA */
+#cta-article__container {
+    background-image: url("assets/vintage1200.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 3em;
+}
+
+#cta-article__container-grid {
+    padding: 3em;
+    display: grid;
+    grid-gap: 1.5em;
+    background-color: white;
+}
+
+#cta-article__container-grid p {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+@keyframes ani-btn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#cta-article__container-grid a {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 1em 4em;
+    width: max-content;
+    max-width: 100%;
+    height: max-content;
+    margin: 0 auto;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: var(--base);
+    color: white;
+    animation-name: ani-btn;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    text-decoration: none;
+}
+
+#cta-article__container-grid a:hover {
+    background-color: #2f5d91;
+}
+
+/* CTA - Mobile devices */
+@media only screen and (max-width: 1000px) {
+    #cta-article__container-grid {
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CTA - Large screens */
+@media only screen and (min-width: 1000px) {
+    #cta-article__container-grid {
+        grid-template-columns: 2fr 1fr;
+        margin: 0 auto;
+        width: 80%;
+        place-items: center;
+    }
+}
+
 
 /* Footer - default */
 #site-footer__footer {
@@ -556,7 +630,7 @@ a:active {
     user-select: none;
 }
 
-/* Generic article - Mobile devices */
+/* footer - Mobile devices */
 @media only screen and (max-width: 768px) {
     #site-footer__footer {
         flex-direction: column;
@@ -580,7 +654,7 @@ a:active {
     }
 }
 
-/* Generic article - Tablets, laptops and other large screen devices */
+/* footer - Tablets, laptops and other large screen devices */
 @media only screen and (min-width: 768px) {
     #site-footer__footer {
         flex-direction: row;
