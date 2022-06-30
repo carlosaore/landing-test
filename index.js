@@ -1,9 +1,9 @@
-const siteHeaderHamburgerButton = document.getElementById("site-header__hamburger-button");
-const siteHeaderXButton = document.getElementById("site-header__x-button");
 const siteHeaderNavbarMenu = document.getElementById("site-header__navbar-menu");
 const siteHeaderNavbarServicesLi = document.getElementById("site-header__navbar-services").firstChild;
 const siteHeaderNavbarChildrenUl = document.getElementById("site-header__navbar-children-ul");
 const siteHeaderNavbarUpdownIcon = document.getElementById("site-header__navbar-updown-icon");
+const siteHeaderHamburgerButton = document.getElementById("site-header__hamburger-button");
+const siteHeaderXButton = document.getElementById("site-header__x-button");
 
 const siteHeaderHamburgerButtonHandler = () => {
 	//siteHeaderNavbarMenu.classList.toggle("visible");
