@@ -28,15 +28,14 @@
     z-index: 20;
     background-color: #fff;
     width: 100%;
-    height: 18.2%;
 }
 
 .site-header__navbar {
     display: flex;
     align-items: center;
     width: min(100%, 1650px);
-    margin: 0 0;
-    padding: 0 2.9%;
+    margin: 0 auto;
+    padding-left: 20px;
 }
 
 .site-header__navbar * {
@@ -45,8 +44,7 @@
 }
 
 .site-header__image {
-    max-width: 38%;
-    margin-top: 5%;
+    max-width: 140px
 }
 
 #site-header__hamburger-button {
@@ -87,12 +85,20 @@
     .site-header__navbar {
         height: 73px;
     }
+
+    #site-header__icons--dummy {
+        display: none;
+    }
 }
 
 /* Navbar - Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     .site-header__navbar {
         height: 83px;
+    }
+
+    #site-header__icons--dummy {
+        display: none;
     }
 }
 
@@ -101,6 +107,11 @@
     .site-header__navbar {
         height: 87px;
     }
+
+    #site-header__icons--dummy {
+        width: 150px;
+        height: 100%;
+    }
 }
 
 /* Navbar - Desktops & large screens */
@@ -108,12 +119,22 @@
     .site-header__navbar {
         height: 88px;
     }
+
+    #site-header__icons--dummy {
+        width: 150px;
+        height: 100%;
+    }
 }
 
 /* Navbar - Extra large screens & TVs */
 @media only screen and (min-width: 1200px) {
     .site-header__navbar {
         height: 88px;
+    }
+
+    #site-header__icons--dummy {
+        width: 150px;
+        height: 100%;
     }
 }
 
@@ -124,10 +145,6 @@
         height: 100px;
     }
 
-    #site-header__navbar-search-icon {
-        display: none;
-    }
-
     #site-header__hamburger-button {
         display: block;
     }
@@ -136,7 +153,7 @@
         display: flex;
         flex-direction: column;
         transition: .15s ease;
-        background-color: #517b9a;
+        background-color: #fff;
         position: absolute;
         width: 100%;
         top: 100%;
@@ -148,7 +165,7 @@
 
     .site-header__navbar-li {
         width: 100%;
-        text-decoration: underline;
+        border-top: 2px solid var(--gray300);
     }
 
     .site-header__navbar-li a {
@@ -169,20 +186,19 @@
 
     #site-header__open-submenu {
         position: absolute;
-        top: 1rem;
         right: 0.1rem;
         width: 3rem;
     }
 
     #site-header__navbar-updown-icon {
         width: 100%;
-        height: 2rem;
-        fill: #fff;
+        height: 1.5rem;
+        fill: var(--dark400);
         transition: all 0.3s ease-in-out;
     }
 
     #site-header__navbar-children-ul {
-        background-color: #517b9a;
+        background-color: #fff;
     }
 
     .site-header__navbar-children-li {
@@ -197,13 +213,7 @@
     }
 
     #site-header__navbar-menu {
-        margin-left: -50px;
-        width: 500px;
-        height: 100%;
-    }
-
-    #site-header__navbar-search-icon {
-        width: 90px;
+        width: max-content;
         height: 100%;
     }
 
@@ -212,7 +222,6 @@
     }
 
     #site-header__navbar-ul {
-        margin: 25 25% 25 0;
         height: 100%;
         list-style: none;
         display: flex;
@@ -223,10 +232,7 @@
     .site-header__navbar-li {
         height: 100%;
         margin-left: 1rem;
-        padding: 0 0.5rem;
         position: relative;
-        margin-top: 2%;
-
     }
 
     .site-header__navbar-li a {
@@ -243,26 +249,14 @@
     }
 
     .site-header__navbar-li > a > span {
-        font-size: 1.1rem;
-        font-weight: bolder;
-        color: #517b9a;
+        font-size: 1em;
+        font-weight: 400;
+        color: rgb(29, 74, 127);
     }
 
     .site-header__navbar-li:hover > a > span {
         color: #517b9a;
         text-decoration: underline;
-    }
-
-    .site-header__navbar-li:hover:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        margin: auto;
-        height: 2px;
-        background-color: var(--dark700);
-        animation: nav-li-hover 0.3s ease-in-out;
     }
 
     #site-header__navbar-children-ul {
@@ -281,14 +275,15 @@
         display: block;
         opacity: 1;
         position: absolute;
-        width: 200%;
+        width: 350%;
         top: 100%;
         left: 0;
         padding: 0 1rem 1rem 1rem;
+        border: 1px solid var(--gray300);
     }
 
     .site-header__navbar-children-li {
-        margin-top: rem;
+        margin-top: 1rem;
     }
 
     .site-header__navbar-children-li > a > span {
@@ -544,7 +539,7 @@
 /* Footer - default */
 #site-footer__footer {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("assets/atomic-footer-bg.jpg");
+    background-color: rgb(29, 74, 127);
     width: 100%;
 }
 #site-footer__wrapper {
@@ -594,7 +589,6 @@
 
 #site-footer__right-section {
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 3px;
     display: flex;
     flex-direction: column;
@@ -615,10 +609,11 @@
 }
 
 #site-footer__right-section a,
-a:visited,
-a:hover,
-a:active {
-    color: #fff;
+#site-footer__right-section a:visited,
+#site-footer__right-section a:hover,
+#site-footer__right-section a:active {
+    color: rgb(29, 74, 127);
+    text-decoration: none;
 }
 
 #site-footer__right-section a:hover {
