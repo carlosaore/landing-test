@@ -26,36 +26,6 @@
 </head>
 <body>
 <header id="site-header__header">
-    <script>
-        (
-			function (document, tagName, id, callBack) {
-				return; // disable Formitable SDK
-				// get the first script tag (tagName = "script")
-                var ftjs = document.getElementsByTagName(tagName)[0];
-				// if an element with the provided id already exists, return
-                if (document.getElementById(id)) return;
-				// an element with the provided id does not exist. Let's create one using the provided tag name ("script")
-                var js = document.createElement(tagName);
-				// set the id of the newly created element to the provided id
-                js.id = id;
-				// set the src of the newly created element to the Formitable SDK from the CDN
-                js.src = "https://cdn.formitable.com/sdk/v1/ft.sdk.min.js";
-				// set the onload of the newly created element to the provided callback function
-                callBack && (js.onload = callBack);
-				// insert the newly created element before the first script tag
-                ftjs.parentNode.insertBefore(js, ftjs);
-            }(
-                document,
-                'script',
-                'formitable-sdk',
-                function () {
-					// once the Formitable SDK has been loaded, load the Analytics module
-                    // FT reads as unresolved variable, since it's actually defined in the Formitable SDK in this line: `var FT=new Sdk.Ft;` (see ft.sdk.min.js towards the end of the file
-                    //FT.load('Analytics');
-                }
-			)
-        );
-    </script>
     <div
         class="ft-widget-b2"
         data-restaurant="fa8fa3b3"
