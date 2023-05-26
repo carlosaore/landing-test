@@ -44,7 +44,7 @@
             if (document.getElementById(id)) return;
             const js = document.createElement(tagName);
             js.id = id;
-            js.src = "/searchmarina.js";
+            js.src = "https://search-marina-cdn.s3.eu-central-1.amazonaws.com/searchmarina.js";
             fst.parentNode.insertBefore(js, fst);
         }(
             document,
