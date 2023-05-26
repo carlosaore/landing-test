@@ -26,6 +26,70 @@
 </head>
 <body>
 <header id="site-header__header">
+    <script>
+        (
+			function (document, tagName, id, callBack) {
+				return; // disable Formitable SDK
+				// get the first script tag (tagName = "script")
+                var ftjs = document.getElementsByTagName(tagName)[0];
+				// if an element with the provided id already exists, return
+                if (document.getElementById(id)) return;
+				// an element with the provided id does not exist. Let's create one using the provided tag name ("script")
+                var js = document.createElement(tagName);
+				// set the id of the newly created element to the provided id
+                js.id = id;
+				// set the src of the newly created element to the Formitable SDK from the CDN
+                js.src = "https://cdn.formitable.com/sdk/v1/ft.sdk.min.js";
+				// set the onload of the newly created element to the provided callback function
+                callBack && (js.onload = callBack);
+				// insert the newly created element before the first script tag
+                ftjs.parentNode.insertBefore(js, ftjs);
+            }(
+                document,
+                'script',
+                'formitable-sdk',
+                function () {
+					// once the Formitable SDK has been loaded, load the Analytics module
+                    // FT reads as unresolved variable, since it's actually defined in the Formitable SDK in this line: `var FT=new Sdk.Ft;` (see ft.sdk.min.js towards the end of the file
+                    //FT.load('Analytics');
+                }
+			)
+        );
+    </script>
+    <div
+        class="ft-widget-b2"
+        data-restaurant="fa8fa3b3"
+        data-open="1500"
+        data-open-mobile="false"
+        data-color="#f74f4f"
+        data-language="auto"
+        data-tag="Website"
+        data-toolbar="true"
+        data-toolbar-mobile="true"
+    ></div>
+<script>
+    (
+        function (document, tagName, id) {
+            const fst = document.getElementsByTagName(tagName)[0];
+            if (document.getElementById(id)) return;
+            const js = document.createElement(tagName);
+            js.id = id;
+            js.src = "/searchmarina.js";
+            fst.parentNode.insertBefore(js, fst);
+        }(
+            document,
+            'script',
+            'search-marina-widget',
+        )
+    );
+</script>
+<div
+    class="sm-widget"
+    data-pier="fa8fa3b3"
+    data-color="#f74f4f"
+    data-button-size="3rem"
+>
+</div>
     <div id="announcement-bar__container">
         <p id="announcement-bar__text">Para cualquier duda llama o manda un WhatsApp al 611.491.701</p>
     </div>
